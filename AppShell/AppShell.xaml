@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="eMallApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:eMallApp.Views.Authentication"
+    xmlns:local2="clr-namespace:eMallApp.Views.TabBar"
+    xmlns:local3="clr-namespace:eMallApp.Views.Products"
+    xmlns:local4="clr-namespace:eMallApp.Views.Home_Extension"
+    xmlns:auth="clr-namespace:eMallApp.ViewModels"
+    x:DataType="auth:AuthenticationVM"
+    Title="eMallApp"
+    
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutWidth="355"
+    Shell.BackgroundColor="Black"
+    Shell.TitleColor="Goldenrod"
+    FlyoutBackgroundColor="Black"
+    Shell.ForegroundColor="White"
+    >
+
+    <ShellContent
+       Title="Sign In"
+       ContentTemplate="{DataTemplate local:LoginPage}"
+       Route="LoginPage"
+       Shell.FlyoutItemIsVisible="False"
+       Shell.FlyoutBehavior="Disabled"/>
+    
+    <ShellContent
+        ContentTemplate="{DataTemplate local2:HomePage}"
+        Route="HomePage"/>
+    <ShellContent
+         ContentTemplate="{DataTemplate local2:RequestPage}"
+         Route="RequestPage"
+        FlyoutItemIsVisible="False"/>
+
+    <ShellContent
+         ContentTemplate="{DataTemplate local2:CommunityPage}"
+         Route="CommunityPage"
+        FlyoutItemIsVisible="False"/>
+
+    <ShellContent
+     ContentTemplate="{DataTemplate local4:RetailShops_Page}"
+     Route="RetailShops_Page"
+    FlyoutItemIsVisible="False"/>
+
+    <ShellContent
+         ContentTemplate="{DataTemplate local3:ViewProducts}"
+         Route="ViewProducts"
+        FlyoutItemIsVisible="False"/>
+
+    <Shell.FlyoutHeader>
+        <Label Text="Settings:" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Margin="10" TextColor="White"/>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions=".30*,.70*" RowDefinitions="*,*,*,*,*,*,*" RowSpacing="1" ColumnSpacing="10" Padding="0">
+
+                <Frame BorderColor="White" Grid.ColumnSpan="2" Padding="0" Margin="2" BackgroundColor="#2D2D2D">
+
+                    <HorizontalStackLayout Grid.Row="0" Spacing="50" Padding="10,5" Grid.ColumnSpan="2">
+                        <Image Source="user.png" WidthRequest="25" HeightRequest="25"/>
+                        <VerticalStackLayout>
+                            <Label Text="Profile"
+                                  FontAttributes="Bold"
+                                  VerticalOptions="Center"
+                                  TextColor="Goldenrod"
+                                  FontSize="Medium"/>
+                            <Label Text="Edit profile and change password" TextColor="White" FontSize="Caption"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame BorderColor="Gold" Grid.Row="1" Grid.ColumnSpan="2" Padding="0" Margin="2" BackgroundColor="#2D2D2D">
+
+                    <HorizontalStackLayout Spacing="50" Padding="10,5" Grid.ColumnSpan="2">
+                        <Image Source="shopping_bag" WidthRequest="25" HeightRequest="25"/>
+                        <VerticalStackLayout>
+                            <Label Text="Orders"
+                                  FontAttributes="Bold"
+                                  VerticalOptions="Center"
+                                  TextColor="Goldenrod"
+                                  FontSize="Medium"/>
+                            <Label Text="View your order(s)..." TextColor="White" FontSize="Caption"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                
+                <Frame BorderColor="White" Grid.Row="2" Grid.ColumnSpan="2" Padding="0" Margin="2" BackgroundColor="#2D2D2D">
+
+                    <HorizontalStackLayout Spacing="50" Padding="10,5" Grid.ColumnSpan="2">
+                        <Image Source="debit_cards.png" WidthRequest="25" HeightRequest="25"/>
+                        <VerticalStackLayout>
+                            <Label Text="Accounts"
+                                  FontAttributes="Bold"
+                                  VerticalOptions="Center"
+                                  TextColor="Goldenrod"
+                                  FontSize="Medium"/>
+                            <Label Text="Add, Edit and remove bank accounts" TextColor="White" FontSize="Caption"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame BorderColor="White" Grid.Row="3" Grid.ColumnSpan="2" Padding="0" Margin="2" BackgroundColor="#2D2D2D">
+
+                    <HorizontalStackLayout Spacing="50" Padding="10,5" Grid.ColumnSpan="2">
+                        <Image Source="scroll.png" WidthRequest="25" HeightRequest="25"/>
+                        <VerticalStackLayout>
+                            <Label Text="History"
+                                  FontAttributes="Bold"
+                                  VerticalOptions="Center"
+                                  TextColor="Goldenrod"
+                                  FontSize="Medium"/>
+                            <Label Text="View the history of your orders" TextColor="White" FontSize="Caption"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame BorderColor="Gold" Grid.Row="4" Grid.ColumnSpan="2" Padding="0" Margin="2" BackgroundColor="#2D2D2D">
+
+                    <HorizontalStackLayout Spacing="50" Padding="10,5" Grid.ColumnSpan="2">
+                        <Image Source="contactus_icon.png" WidthRequest="25" HeightRequest="25"/>
+                        <VerticalStackLayout>
+                            <Label Text="Help"
+                             FontAttributes="Bold"
+                             VerticalOptions="Center"
+                             TextColor="Goldenrod"
+                             FontSize="Medium"/>
+                            <Label Text="Contact Us" TextColor="White" FontSize="Caption"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame BorderColor="Red" Grid.Row="5" Grid.ColumnSpan="2" Padding="0" Margin="2" BackgroundColor="#2D2D2D">
+
+                    <HorizontalStackLayout Spacing="50" Padding="10,5" Grid.ColumnSpan="2">
+                        <Image Source="signout_icon.png" WidthRequest="25" HeightRequest="25"/>
+                        <Label Text="Sign Out"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                TextColor="Goldenrod"
+                                FontSize="Medium"/>
+                    </HorizontalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+
+    <Shell.FlyoutFooter>
+        <Border  Stroke="Gray" Margin="0"
+                 StrokeShape="RoundRectangle 30,30,30,30"
+                 WidthRequest="210">
+            <Label Text="Swipe LEFT to go Back!" FontAttributes="Bold,Italic" TextColor="Goldenrod" HorizontalTextAlignment="Center"/>
+        </Border>
+    </Shell.FlyoutFooter>
+
+    
+
+</Shell>
