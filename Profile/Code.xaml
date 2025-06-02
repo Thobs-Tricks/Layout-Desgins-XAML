@@ -1,0 +1,75 @@
+<VerticalStackLayout Spacing="10" BackgroundColor="White">
+    <HorizontalStackLayout HorizontalOptions="Center">
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="-30">
+            <Border HeightRequest="125" StrokeShape="RoundRectangle 100,100,100,100" BackgroundColor="GhostWhite" WidthRequest="125" Stroke="LightGray">
+                <Image Source="user" HeightRequest="120" WidthRequest="120" />
+            </Border>
+
+            <Border StrokeShape="RoundRectangle 20" Padding="0" Margin="0" Stroke="GhostWhite" HeightRequest="35" WidthRequest="35" BackgroundColor="#00BF63" Grid.Column="2" VerticalOptions="End">
+                <ImageButton Source="pencil" MaximumHeightRequest="20" MaximumWidthRequest="20"/>
+            </Border>
+        </Grid>
+    </HorizontalStackLayout>
+
+    <VerticalStackLayout Padding="2" Margin="2,10,0,0">
+        <Label Text="User Info:" FontAttributes="Bold" Margin="5,0" />
+        <Border Stroke="LightGray" BackgroundColor="GhostWhite" StrokeShape="RoundRectangle 8" Padding="2,2" Margin="0,5">
+            <Grid ColumnDefinitions="0.4*,0.6*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  WidthRequest="340"
+                  Padding="0,2"
+                  RowSpacing="5">
+
+                <Label Text="Name: " FontAttributes="Bold" FontSize="Subtitle" TextColor="Black" VerticalOptions="Center"/>
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 8,8,8,8" Stroke="LightGray" HeightRequest="35" Grid.Column="1" Padding="5,0">
+                    <Label Text="{Binding User.uName}" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                </Border>
+
+                <Label Grid.Row="1" Text="Contact: " FontAttributes="Bold" FontSize="Subtitle" TextColor="Black" VerticalOptions="Center"/>
+
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 8,8,8,8" Stroke="LightGray" HeightRequest="35" Grid.Row="1" Grid.Column="1" Padding="5,0">
+                    <Label Text="{Binding User.uPhone}" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                </Border>
+                <HorizontalStackLayout Grid.Row="2" Grid.Column="1">
+                    <!--<ImageButton Source="edit" MaximumHeightRequest="25" MaximumWidthRequest="25" HorizontalOptions="Start" />-->
+                    <Button MaximumHeightRequest="21" WidthRequest="70" Text="Edit" Padding="1" BackgroundColor="#00BF63" />
+                </HorizontalStackLayout>
+                
+                <Label Grid.Row="3" Text="Email: " FontAttributes="Bold" FontSize="Subtitle" TextColor="Black" VerticalOptions="Center"/>
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 8,8,8,8" Stroke="LightGray" HeightRequest="35" Grid.Row="3" Grid.Column="1" Padding="5,0">
+                    <Label Text="{Binding User.uEmail}" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                </Border>
+
+                <HorizontalStackLayout Grid.Row="4" Grid.Column="1">
+                    <!--<ImageButton Source="edit" MaximumHeightRequest="25" MaximumWidthRequest="25" HorizontalOptions="Start" />-->
+                    <Button MaximumHeightRequest="21" WidthRequest="70" Text="Edit" Padding="1" BackgroundColor="#00BF63" />
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+
+        <Label Text="Security:" FontAttributes="Bold" Margin="5,0" />
+        <Border Stroke="LightGray" BackgroundColor="GhostWhite" StrokeShape="RoundRectangle 8" Padding="2,2" Margin="0,5">
+            <Grid ColumnDefinitions="0.4*,0.6*"
+                  RowDefinitions="Auto,Auto"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  WidthRequest="340"
+                  Padding="0,2"
+                  RowSpacing="5">
+
+                <Label Text="Password: " FontAttributes="Bold" FontSize="Subtitle" TextColor="Black" VerticalOptions="Center"/>
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 8,8,8,8" Stroke="LightGray" HeightRequest="35" Grid.Column="1" Padding="5,0">
+                    <Label Text="*********" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                </Border>
+                <Button Text="Change Password" BackgroundColor="#00BF63" TextColor="Black" Grid.Row="1" Grid.Column="1" MaximumHeightRequest="28" WidthRequest="130" Padding="0" HorizontalOptions="Start" />
+                <!--<Label Grid.Row="1" Text="Contact: " FontAttributes="Bold" FontSize="Subtitle" TextColor="Black" VerticalOptions="Center"/>
+
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 8,8,8,8" Stroke="LightGray" HeightRequest="35" Grid.Row="1" Grid.Column="1" Padding="5,0">
+                    <Label Text="{Binding User.uPhone}" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                </Border>-->
+            </Grid>
+        </Border>
+    </VerticalStackLayout>
+</VerticalStackLayout>
