@@ -1,0 +1,233 @@
+<AbsoluteLayout>
+    <VerticalStackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+
+
+        <stepP:SfStepProgressBar ItemsSource="{Binding StepProgressItem}" ActiveStepProgressValue="{Binding CurrStepValue}" ProgressBarBackground="#00BF63" StepSize="15" ActiveStepIndex="{Binding CurrentStepIndex}" HorizontalOptions="Center" Orientation="Horizontal">
+            <!--<stepP:SfStepProgressBar.InProgressStepSettings>
+                <stepP:StepSettings Background="#00BF63"/>
+            </stepP:SfStepProgressBar.InProgressStepSettings>-->
+            <stepP:SfStepProgressBar.CompletedStepSettings>
+                <stepP:StepSettings Background="#00BF63" ContentType="Dot" ContentFillColor="#00BF63" ProgressColor="#00BF63"/>
+            </stepP:SfStepProgressBar.CompletedStepSettings>
+            <stepP:SfStepProgressBar.NotStartedStepSettings>
+                <stepP:StepSettings Background="LightGray"/>
+            </stepP:SfStepProgressBar.NotStartedStepSettings>
+        </stepP:SfStepProgressBar>
+
+        <Label Text="{Binding PageNum}" FontFamily="LS_semiBold" TextColor="#00BF63" HorizontalTextAlignment="Center" />
+
+        <!--Apply Content-->
+        <VerticalStackLayout IsVisible="{Binding IsApplyContent}" Spacing="10">
+            <Label 
+                Text="Register Transport"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                FontAttributes="Bold"
+                FontSize="Body"
+                Margin="10,7,0,-10"
+                TextColor="#00BF63"/>
+            <ScrollView HeightRequest="590">
+                <VerticalStackLayout Margin="10,10">
+                    <Grid ColumnDefinitions=".3*,.5*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*" RowSpacing="5">
+                        <Label Text="Vehicle Name:" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                HeightRequest="45"
+                                Padding="2">
+                            <Entry Text="" FontSize="14" PlaceholderColor="#25292A" FontAttributes="Bold" TextColor="Black" BackgroundColor="White" HorizontalOptions="Fill" CharacterSpacing="1.5"/>
+                        </Border>
+
+                        <Label Text="Vehicle Model:" Grid.Row="1" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                HeightRequest="45"
+                                Padding="2">
+
+                            <Entry Text="" FontSize="14" PlaceholderColor="#25292A" FontAttributes="Bold" TextColor="Black" BackgroundColor="White" HorizontalOptions="Fill" CharacterSpacing="1.5"/>
+                        </Border>
+                        
+                        <Label Text="Car Registration:" Grid.Row="2" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="2"
+                                HeightRequest="45"
+                                Padding="2">
+
+                            <Entry Text="" FontSize="14" PlaceholderColor="#25292A" FontAttributes="Bold" TextColor="Black" BackgroundColor="White" HorizontalOptions="Fill" CharacterSpacing="1.5"/>
+                        </Border>
+
+                        <Label Text="Years of Driving:" Grid.Row="3" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="3"
+                                HeightRequest="45"
+                                Padding="2">
+
+                            <Entry Text="" FontSize="14" PlaceholderColor="#25292A" FontAttributes="Bold" TextColor="Black" BackgroundColor="White" HorizontalOptions="Fill" CharacterSpacing="1.5"/>
+                        </Border>
+
+                        <Label Text="Upload ID:" Grid.Row="4" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="4"
+                                Padding="4">
+                            <HorizontalStackLayout Spacing="10">
+                                <Button Text="Select" BackgroundColor="#00BF63" MaximumHeightRequest="25" WidthRequest="50" Padding="0" CornerRadius="5" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Text="document.pdf" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <Label Text="Upload License:" Grid.Row="5" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="5"
+                                Padding="4">
+                            <HorizontalStackLayout Spacing="10">
+                                <Button Text="Select" BackgroundColor="#00BF63" MaximumHeightRequest="25" WidthRequest="50" Padding="0" CornerRadius="5" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Text="document.pdf" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <Label Text="Ownership Doc:" Grid.Row="6" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="6"
+                                Padding="4">
+                            <HorizontalStackLayout Spacing="10">
+                                <Button Text="Select" BackgroundColor="#00BF63" MaximumHeightRequest="25" WidthRequest="50" Padding="0" CornerRadius="5" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                <Label Text="document.pdf" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <Label Text="Criminal Rec." Grid.Row="7" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                Grid.Row="7"
+                                HeightRequest="45"
+                                Padding="2">
+
+                            <Picker ItemsSource="{Binding Options}" SelectedItem="{Binding Rgt.gender}" Margin="0,0,20,0" Title="Select..." TextColor="Black" FontSize="15" TitleColor="Black" />
+                        </Border>
+
+                        <Label Text="Upload 4 Car Pictures below:" Grid.Row="8" Grid.ColumnSpan="2" FontAttributes="Bold" FontSize="Body"/>
+                        <Border StrokeShape="5" Stroke="LightGray" BackgroundColor="White" Grid.Row="9" Grid.ColumnSpan="2"  Padding="3">
+                            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*" Padding="0" RowSpacing="10">
+
+                                <VerticalStackLayout>
+                                    <Border StrokeShape="10" Stroke="Gray" MaximumHeightRequest="100" MaximumWidthRequest="100">
+                                        <ImageButton Source="plus.png" MaximumHeightRequest="95" MaximumWidthRequest="50"/>
+                                    </Border>
+
+                                    <Label Text="Front" HorizontalTextAlignment="Center" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Border StrokeShape="10" Stroke="Gray" MaximumHeightRequest="100" MaximumWidthRequest="100">
+                                        <ImageButton Source="plus.png" MaximumHeightRequest="95" MaximumWidthRequest="50"/>
+                                    </Border>
+
+                                    <Label Text="Back" HorizontalTextAlignment="Center" />
+
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="1">
+                                    <Border StrokeShape="10" Stroke="Gray" MaximumHeightRequest="100" MaximumWidthRequest="100" >
+                                        <ImageButton Source="plus.png" MaximumHeightRequest="95" MaximumWidthRequest="50"/>
+                                    </Border>
+
+                                    <Label Text="1st Side" HorizontalTextAlignment="Center" />
+
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                                    <Border StrokeShape="10" Stroke="Gray" MaximumHeightRequest="100" MaximumWidthRequest="100" >
+                                        <ImageButton Source="plus.png" MaximumHeightRequest="95" MaximumWidthRequest="50"/>
+                                    </Border>
+
+                                    <Label Text="2nd Side" HorizontalTextAlignment="Center" />
+
+                                </VerticalStackLayout>
+
+                                <Button Text="Upload Images" Padding="2" MaximumHeightRequest="35" WidthRequest="150" FontAttributes="Bold" BackgroundColor="#00BF63" Margin="0,8,0,0" Grid.Row="2" Grid.ColumnSpan="2"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Button Command="{Binding GotoProfileCommand}"  Grid.Row="8" Background="#00BF63" Text="Apply" FontAttributes="Bold" TextColor="Black" FontSize="Body" WidthRequest="150" VerticalOptions="Center" Margin="0,30">
+                    </Button>
+                    
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+
+
+        <!--Profile Content-->
+        <VerticalStackLayout IsVisible="{Binding IsProfileContent}">
+            <Label 
+                Text="Set Profile"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                FontAttributes="Bold"
+                FontSize="Body"
+                Margin="10,7,0,-10"
+                TextColor="#00BF63"/>
+            <ScrollView>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="-30">
+                            <Border HeightRequest="125" StrokeShape="RoundRectangle 100,100,100,100" BackgroundColor="GhostWhite" WidthRequest="125" Stroke="LightGray">
+                                <Image Source="user" HeightRequest="120" WidthRequest="120" />
+                            </Border>
+
+                            <Border StrokeShape="RoundRectangle 20" Padding="0" Margin="0" Stroke="GhostWhite" HeightRequest="35" WidthRequest="35" BackgroundColor="#00BF63" Grid.Column="2" VerticalOptions="End">
+                                <ImageButton Source="pencil" MaximumHeightRequest="20" MaximumWidthRequest="20"/>
+                            </Border>
+                        </Grid>
+                    </HorizontalStackLayout>
+
+                    <!--<Grid ColumnDefinitions=".3*,.5*" RowDefinitions="*,*,*,*,*,*,*,*" RowSpacing="5">
+                        <Label Text="Vehicle Name:" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="#90908F"
+                                Grid.Column="1"
+                                HeightRequest="45"
+                                Padding="2">
+                            <Entry Text="" FontSize="14" PlaceholderColor="#25292A" FontAttributes="Bold" TextColor="Black" BackgroundColor="White" HorizontalOptions="Fill" CharacterSpacing="1.5"/>
+                        </Border>
+                    </Grid>-->
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+    <Grid 
+         AbsoluteLayout.LayoutBounds="0,0,1,1" 
+         AbsoluteLayout.LayoutFlags="All" 
+         BackgroundColor="#80000000" 
+         IsVisible="{Binding IsBusy}">
+        <ActivityIndicator 
+              IsVisible="{Binding IsBusy}" 
+              IsRunning="{Binding IsBusy}" 
+              Color="#00BF63" 
+              HorizontalOptions="Center" 
+              VerticalOptions="Center"/>
+    </Grid>
+</AbsoluteLayout>
